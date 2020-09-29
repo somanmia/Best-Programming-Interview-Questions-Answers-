@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<string.h>
+int main(){
+int i,j,index_min;
+char A[5][100]={"java","c#","python","php","javascript"};
+char temp[100];
+for(i=0;i<5;i++){
+    index_min=i;
+    for(j=i+1;j<5;j++){
+        if(strcmp(A[j],A[index_min])<0){
+               index_min=j;
+        }
+    }
+    if(index_min!=i){
+        strcpy(temp,A[i]);
+        strcpy(A[i],A[index_min]);
+        strcpy(A[index_min],temp);
+    }
+}
+
+printf("After Sorting : ");
+for(i=0;i<5;i++){
+    printf("%s ",A[i]);
+}
+}
